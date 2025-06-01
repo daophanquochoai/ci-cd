@@ -1,0 +1,15 @@
+name : Build image docker
+on:
+  pull_request:
+  push:
+    - main
+jobs:
+  build-docker-iamge:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true || github.event_name == 'push'
+    steps:
+      - name: Cancel previous pipeline
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ secrets.GHCR }}
+          all_but_latest: true
