@@ -2,7 +2,8 @@ name : Build image docker
 on:
   pull_request:
   push:
-    - main
+    branches:
+      - main
 jobs:
   build-docker-iamge:
     runs-on: ubuntu-latest
