@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/doctorhoai/cicd
+          images: ghcr.io/daophanquochoai/cicd
           flavor: latest=true
           tags: |
             type=raw,value=deploy-{{sha}}
