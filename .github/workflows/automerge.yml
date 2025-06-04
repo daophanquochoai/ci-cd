@@ -29,8 +29,3 @@ jobs:
         with:
           pull-request-number: ${{ github.event.pull_request.number }}
           merge-method: merge  # or squash/rebase if desired
-
-      - name: Auto-merge PR using GitHub CLI
-        run: gh pr merge -R "${{ github.repository }}" --merge --auto ${{ github.event.pull_request.number }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
